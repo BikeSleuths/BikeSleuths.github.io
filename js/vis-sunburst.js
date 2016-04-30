@@ -98,7 +98,7 @@ queue()
 
           var totalSize = 5243;
           var percentage = (100 * d.value / totalSize).toPrecision(3);
-          var percentageString = "Probability of your bike getting stolen = " + percentage + "%";
+          var percentageString = "% of bike stolen in the BikeIndex Dataset = " + percentage + "%";
           if (percentage < 0.1) {
               percentageString = "< 0.1%";
           }
