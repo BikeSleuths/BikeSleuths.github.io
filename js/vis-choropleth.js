@@ -64,8 +64,9 @@ function updateChart()
 function updateChoropleth() {
 
 
-    var width = 620,
-        height = 500;
+    var margin = {top: 10, right: 10, bottom: 10, left: 10},
+        width = 620 - margin.left - margin.right,
+        height = 500 - margin.top - margin.bottom;
 
     var div = d3.select("#vis-choro").append("div")
         .attr("class", "tooltip")
@@ -275,7 +276,7 @@ function updateChoropleth() {
     var ls_h = 15;
 
     legend_st.append("rect")
-        .attr("x",-5)
+        .attr("x",width - 75)
         .attr("y", function(d, i){ return height - (i*ls_h) - 2*ls_h - 70;})
         .attr("width", ls_w)
         .attr("height", ls_h)
@@ -295,7 +296,7 @@ function updateChoropleth() {
         .attr("class", "legend_txt");
 
     legend_txt.append("text")
-        .attr("x", 20)
+        .attr("x", width - 55 )
         .attr("y", function(d, i){ return height - (i*ls_h) - ls_h - 4 - 70;})
         .text(function(d, i){ return legend_labels[i]; });
 
