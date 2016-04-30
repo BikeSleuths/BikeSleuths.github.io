@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Bike Theft Sleuths</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/scrolling-nav.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="shortcut icon" href="favicon.ico">
+
+    <!-- Where - Map-->
+    <link rel="stylesheet" href="css/points-map-style.css">
+
+    <!-- Where - Map - Bar Legend-->
+    <link rel="stylesheet" href="css/legend-bar-style.css">
+
+    <!-- Where - Places-->
+    <link rel="stylesheet" href="css/places-dot-style.css">
+
+    <!-- Where - bubble-->
+    <link rel="stylesheet" href="css/bubble-style.css">
+
+    <!-- Trend-->
+    <link rel="stylesheet" href="css/trend-style.css">
+
+    <!-- Brand-->
+    <link rel="stylesheet" href="css/brand-sankey-style.css">
+
+    <!-- Conclusion-->
+    <link rel="stylesheet" href="css/sunburst-style.css">
+
+    <!-- Google Font for logo -->
+     <link href='https://fonts.googleapis.com/css?family=Crushed' rel='stylesheet' type='text/css'>
+</head>
+
+<!-- The #page-top ID is part of the scrolling feature - the data-spy and data-target are part of the built-in Bootstrap scrollspy function -->
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation" style="background-color: #020707;">
+        <div class="container">
+             <img id="whiteLogo" src="images/bikesleuthLogo.jpg"/>
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand page-scroll" style="font-family: Crushed; font-size: 36px" href="#page-top">Bike Theft Sleuths</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav" style="font-size: large">
+                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                    <li class="hidden">
+                        <a class="page-scroll" href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#where">Where</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#locks">Bike Lock Effectiveness</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#trends">Historical Theft Trend</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#when">When</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#brands">Bike Brands</a>
+                    </li>
+                      <li>
+                        <a class="page-scroll" href="#credits">Credits</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Intro Section -->
+    <section id="intro" class="introBackground intro-section">
+       <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="jumbotron">
+                        <h1>Bike Thefts in the US</h1>
+                        <h2>Biking is more popular than ever before in the US. <br>Unfortunately,
+                            so is stealing bikes.</h2>
+                        <h5>As more people take up biking to be healthy and environmentally friendly, the chances that
+                            they may have to deal with a stolen bike increases. The problem is generally perceived to be
+                            trivial but as these data show, bicycle thefts in the United States is on the rise.
+                        </h5>
+                        <div >
+                            <img src="images/Intro_infographic.gif" id="intro-infographic">
+                        </div>
+                        <p><a class="page-scroll btn btn-primary btn-lg" href="#where">Learn more</a></p>
+                    </div>
+                    <!--<a class="btn btn-default page-scroll" href="#about">Click Me to Scroll Down!</a>-->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Where Section -->
+    <section id="where" class="greyBackground where-section">
+        <div class="container">
+            <h1>Where in the US do thefts happen?</h1>
+            <h4 class="web-content">Bike Thefts have been popping up around the country and have increased over the course of time.
+                As one would expect most bike thefts occur during the night or late evening (6pm - 6am) when its dark or during the seasons of summer and fall when bikes are most used. Season has an impact more
+                so along the east coast where winters are colder.</h4>
+            <br>
+            <h3>Is your bike safe where you stay?</h3>
+            <div class="row">
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <div class="row pull-left">
+                                <input id="point-zip" maxlength=5 placeholder="Enter a Zip Code">
+                            </div>
+                        </div>
+                        <div class="col-sm-2">
+                            <a title="" id="day-night-btn" class="btn btn-button-name btn-lg pull-right">Day/Night</a>
+                        </div>
+                        <div class="col-sm-2">
+                            <a title="" id="season-btn" class="btn btn-button-name btn-lg pull-right">Season</a>
+                        </div>
+                        <div class="col-sm-2">
+                            <a title="" id="reset-btn" class="btn btn-button-name btn-lg pull-right">Reset</a>
+                        </div>
+
+
+                    </div>
+                    <div class="row ">
+                        <div class="col-lg-9 vis-map">
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="row"><p><br><br><br><br><br><br><br><br><br></p></p><p id="bar-legend-title"></p></div>
+                            <div class="row vis-bar-legend" style="visibility: visible;">
+
+
+
+                            </div>
+                            <div class="row"><p id="bar-circle-title">Each point on Map denotes <br> Theft Location(Click for Detail)</p></div>
+                            <div class="row vis-circle-legend" ></div>
+                    </div>
+                    <div class="row ">
+                        <div class="col-lg-9 vis-map-slider pull-right">
+                        </div>
+                    </div>
+            </div>
+            <div class="row">
+                <h3>Do Points of Interest like a Business influence the likelihood of a bike theft?</h3>
+                <h4 class="web-content"><i>"Lightning strikes only once"</i> does not really apply when it comes to bike theft. According to these data, several Neighbourhoods/Points of Interest/Businesses came up with multiple thefts.
+                    <br>The chart below shows points of interest around which thefts have recurred. Each point represents a point of interest/Business that had a bike theft occur within a 0.25 mile radius.
+                    Some of these have as many as over 150 bikes stolen in the course of 10 years. 
+                    Per statistics over 50% of bike thefts go unreported, which makes reported thefts only the tip of the iceberg.</h4>
+
+                <div class="col-lg-8">
+                    <div class="row pull-left">
+                        <input id="place-zip" maxlength=5 placeholder="Enter a Zip Code">
+                    </div>
+                    <div class="row vis-places" id="vis-places-id">
+                    </div>
+                    <div class="row vis-poi-bar">
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <p id="bubble-title">Place Type : Restaurant</p>
+                    <div class="row vis-bubble">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+       <!-- Locks Section -->
+    <section id="locks" class="bikeLockBackground locks-section">
+         <div class="container">
+            <h1>How Effective Are Bike Locks?</h1>
+            <div class="row">
+                <h4>All bike locks can be broken, but a sturdy lock and savvy locking strategy will greatly reduce the risk of your bike being singled out by thieves. </h4>
+            </div>
+            <div class="row">
+                <div class="col-sm-7">
+                    <table>
+                        <tr>
+                            <td>
+                                <h4>Thefts By Lock Type, 2010-2015</h4>
+                                <div id="lock-barchart"></div>
+                                Source: <a href="https://bikeindex.org/">Bike Index</a>
+                            </td>
+                            <td>
+                                <br>
+                                <div id="lock-details"></div>
+                            </td>
+                        </tr>
+                        <tr class="lockText">
+                            <td>
+                            <br>
+                                <blockquote>
+                                    <p>"Cable locks are flexible and can make it easier to lock your bike in awkward situations, but they can be cut quickly with bolt cutters or a hacksaw. They may keep honest people honest, but are little deterrence for someone intent on stealing your bike.
+
+                                        Get a U-lock or a hefty bike chain. With the U-lock, lock it with the keyhole facing down as it will make it more difficult for someone to break the lock."</p>
+                                    <small><a href="https://btaoregon.org/2012/09/five-dos-and-donts-to-keep-your-bike-from-getting-stolen/">-Bicycle Transportation Alliance</a></small>
+                                </blockquote>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+             <div class="row">
+                 <h1>What is the probability of your bike getting stolen?</h1>
+                 <h4 class="web-content">Now that we have a feel for how serious this problem is, wouldn't you want to know how susceptible your bike is to theft?
+                     Here is an Interesting visualization using the data to analyze the interaction between State, Bike Brand and Lock type.</h4>
+
+                     <h4 class="web-content">For instance if you use a bike in CA you have a 38.7% chance that your bike will get stolen. If you are in California and own the brand Specialized then 5.8% and ~2 in every 100 bike stolen in CA was of brand Specialized and used a Cable Lock.</h4>
+
+                     <h4 class="web-content">Interact with the viz to get your bike's theft probability ?</h4>
+                 <div class="col-lg-6 vis-sunburst">
+                     <div id="explanation" style="visibility: hidden;">
+                         <span id="percentage"></span>
+                     </div>
+                 </div>
+                 <div class="col-lg-6 vis-concentric-legend">
+
+                 </div>
+             </div>
+        </div>
+    </section>
+
+    <!-- Trends Section -->
+    <section id="trends" class="greyBackgroundTrends trends-section">
+        <div class="container">
+             <h3>Bike Theft Trend in the US, 2005-2015</h3>
+            <h4 class="web-content">States have been trying to promote biking as the mode of transportation due to its environment friendliness and health benefits.
+                The League of American bicyclists have come up with the ranking of states based on certain criteria that support biking.
+                Some of the measuring criteria for the ranking are do states provide dedicated bike lanes and wide shoulders on state owned roads.
+                Do they produce and distribute maps of bike paths and trails. These measures directly result in increase in bike commuters.<br></h4>
+            <div class="row ">
+                <div class="col-lg-7 ">
+                    <img id="bike-league" style="width: 75%;height: 75%; border-radius: 10px; border: grey solid 2px;" src="images/bike-league.jpg">
+                </div>
+                <div class="col-lg-5">
+                    <h4 class="web-content">Increased usage has resulted in increased thefts. These states with high ranks based on biking friendliness and number of commuters also have high incidents of thefts.
+                        California, Oregon, Washington , Texas and New York are in the top 20 states for biking also have high incidents of thefts.
+                        The thefts have also been increasing as the number of commuters increase, unless curbed and more emphasis given to stopping these thefts,
+                        it could ultimately result in reduced bike commuters.<br>
+                        State must also add measure to keep bikes safe as part of their effort to promote bike commuter-ship.</h4>
+                </div>
+
+            </div>
+
+            <div class="row ">
+                <div class="col-lg-7 pull-left">
+                    <!-- Parent container for the line visualization -->
+                    <div id="vis-choro">
+                    </div>
+                </div>
+                <div class="col-lg-5 pull-right">
+                    <!-- Parent container for the map visualization -->
+                    <div id="vis-trend">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+     <!-- When Section -->
+   <section id="when" class="whenBackground when-section">
+       <div class="container">
+            <div class="jumbotron">
+            <div class="row">
+                <h2>When Are Bicycles Stolen?</h2>
+            </div>
+            <div class="row">
+                <h4>Total Thefts by Hour & Day, 1971 - 2015</h4>
+                <div id="time-chart"></div>
+            </div>
+            <div class="row">
+                <h4>Thefts By Month, 2005 - 2015</h4>
+                <div id="month-theft"></div>
+            </div>
+                </div>
+        </div>
+    </section>
+
+    <!-- Brands Section -->
+    <section id="brands" class="brandsBackground brands-section">
+        <div class="container">
+             <div class="jumbotron">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2>Which bike brands do thieves prefer?</h2>
+                    <h4 class="web-content">The brand of the bike on the left aligns with its popularity (number of thefts) on the right.</h4>
+                    <div class="row vis-brand-sankey">
+                        <div id="chart"></div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Credits Section -->
+    <section id="credits" class="creditsBackground credits-section" >
+        <div class="container">
+            <h1>Contributors:</h1>
+            <h2>Ajay Khaladkar</h2>
+            <h2>Ajay Kliyara Philip</h2>
+            <h2>Nick Whalen</h2>
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1>Technologies:</h1>
+                    <h3>Data Set: <a href="https://bikeindex.org/">Bike Index</a></h3>
+                    <h3>Charts: <a href="https://d3js.org/">D3.js</a></h3>
+                    <h3>Website: <a href="http://getbootstrap.com/">Bootstrap</a></h3>
+                </div>
+                <div class="col-lg-12">
+                    <h2>Special Thanks:</h2>
+                    <p><a href="https://bost.ocks.org/mike/">Mike Bostock</a></p>
+                    <p>Harvard CS 171</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+    <script src="js/d3.min.js"></script>
+    <script src="js/d3.tip.js"></script>
+    <script src="js/queue.min.js"></script>
+    <script src="js/topojson.js"></script>
+    <script src="js/chroniton-only.js"></script>
+    <script src="js/colorbrewer.min.js"></script>
+
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/tether.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Scrolling Nav JavaScript -->
+    <script src="js/jquery.easing.min.js"></script>
+    <script src="js/scrolling-nav.js"></script>
+    <script src="js/tether.min.js"></script>
+
+    <!-- sunburst -->
+    <script src="js/vis-sunburst.js"></script>
+
+    <!-- LockType Bar Chart -->
+    <script src="js/locktypes.js"></script>
+
+    <!-- Where - Map -->
+    <script src="js/vis-points-map.js"></script>
+
+    <!-- Where - Map -->
+    <script src="js/vis-legend-bar.js"></script>
+
+    <!-- Where - places -->
+    <script src="js/vis-bar-places.js"></script>
+    <script src="js/vis-dot-places.js"></script>
+
+    <!-- Where - bubble -->
+    <script src="js/vis-bubble.js"></script>
+
+    <!-- Trend -->
+    <script src="js/vis-choropleth.js"></script>
+    <script src="js/vis-trend.js"></script>
+     <!-- Brushing JS -->
+    <script src="js/timescalebrushing.js"></script>
+     <!-- Time Series Chart-->
+    <script src="js/timeseries.js"></script>
+
+
+    <!-- Brand -->
+    <script src="js/sankey.js"></script>
+    <script src="js/vis-sankey-brand.js"></script>
+
+
+
+</body>
+</html>

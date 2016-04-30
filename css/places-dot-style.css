@@ -1,0 +1,77 @@
+
+/* YOUR CSS STYLES */
+
+.x-axis-label:hover
+{
+    cursor: pointer;
+    fill: #EC7873;
+    font-size: medium;
+}
+
+input {
+    background: transparent;
+    border: 3px solid #7FDBFF;
+    margin: 10px ;
+    margin-right: 50px;
+    width: 180px;
+    font-size: 18px;
+    padding: 6px;
+    text-align: center;
+}
+
+.label {
+    font:bold 12px sans-serif;
+}
+
+.x-axis-label {
+    font:11px sans-serif;
+}
+
+.axis {
+    shape-rendering: crispEdges;
+}
+
+/*axis formatting*/
+
+
+.x.axis.places line{
+    fill: none;
+    stroke: #ffffff;
+    stroke-width: 0;
+}
+
+.x.axis path {
+    fill:none;
+    stroke: #000;
+    stroke-width: 2px;
+}
+
+.y.axis path {
+    fill:none;
+    stroke: #000;
+    stroke-width: 2px;
+}
+
+.dot-tooltip {
+    position: absolute;
+    width: 220px;
+    height: 70px;
+    pointer-events: none;
+    border: solid 2px black;
+    border-radius: 5px;
+    padding: 5px;
+    font:13px sans-serif;
+}
+
+.dot:hover
+{
+    stroke-width: 4px;
+    stroke: #984ea3;
+    fill: #984ea3;
+}
+
+.vis-poi-bar
+{
+    fill: #984ea3;
+}
+

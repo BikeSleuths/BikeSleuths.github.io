@@ -1,0 +1,40 @@
+
+/* YOUR CSS STYLES */
+.vis-sunburst {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    margin: auto;
+    position: relative;
+    width: 760px;
+
+}
+
+.vis-sunburst form {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
+.vis-sunburst path {
+    stroke: #fff;
+    fill-rule: evenodd;
+}
+
+
+#explanation {
+    position: absolute;
+    top: 40px;
+    left: 100px;
+    width: 140px;
+    text-align: left;
+    color: #ffffff;
+}
+
+#percentage {
+    font-size: 1.5em;
+}
+
+.vis-concentric-legend
+{
+    width: 300px;
+}
+

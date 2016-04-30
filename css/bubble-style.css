@@ -1,0 +1,20 @@
+
+/* YOUR CSS STYLES */
+.bubble-text {
+    font: 10px sans-serif;
+    fill: black;
+}
+
+
+#bubble-title
+{
+    font: 14px sans-serif;
+    font-weight: bold;
+    text-align: center;
+    margin-left: 30px;
+}
+
+.bubble_circle:hover
+{
+    fill:grey;
+}

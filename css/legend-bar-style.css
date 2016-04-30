@@ -1,0 +1,40 @@
+
+
+/* ************ ADD YOUR CUSTOM STYLES ************ */
+
+
+
+.legend-label
+{
+  text-anchor: end;
+  fill: white;
+  text-align: right;
+  font-size: 14px;
+}
+
+.legend-data-label
+{
+  text-anchor: end;
+  fill: white;
+  text-align: right;
+  font-size: 12px;
+}
+
+
+.vis-bar-legend rect {
+  stroke: grey;
+  stroke-width: 1;
+  stroke-linecap: round;
+  color: yellow;
+}
+.vis-bar-legend rect:hover {
+  stroke-width: 2;
+  color: white;
+  fill: #984ea3;
+}
+
+
+.vis-bar-legend {
+  display: flex;
+  align-items: center;
+}

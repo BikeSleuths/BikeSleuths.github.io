@@ -1,0 +1,91 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Bike Theft Detail</title>
+	<link rel="shortcut icon" href="favicon.ico">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/leaflet.css">
+	<link rel="stylesheet" href="css/detail-style.css">
+</head>
+<body>
+
+
+
+
+    <div class="container">
+		<h2 id="detail-title"></h2>
+        <div class="row ">
+
+			<div class="col-lg-5">
+				<h4 id="detail-subtitle-loc">Theft Location</h4>
+				<img id="place-img" src="">
+			</div>
+
+			<div class="col-lg-7">
+				<h4 id="detail-subtitle-map">Theft & Surrounding Businesses </h4>
+				<div id="theft-map"></div>
+			</div>
+        </div>
+		<div class="row ">
+			<div class="col-lg-5">
+				<h4 id="detail-subtitle-bike">Bicycle Image </h4>
+				<img id="bike-img" src="">
+			</div>
+			<div class="col-lg-7">
+				<h4 id="detail-subtitle-tab">Bicycle/Theft Details </h4>
+				<table class="table table-inverse detail-table">
+					<tbody>
+					<tr>
+						<th scope="row" >Manufacturer Name</th>
+						<td id="manufacturer"></td>
+					</tr>
+					<tr>
+						<th scope="row" >Location</th>
+						<td id="location"></td>
+					</tr>
+					<tr>
+						<th scope="row" >Theft Date</th>
+						<td id="theft-date"></td>
+					</tr>
+					<tr>
+						<th scope="row" >Theft Description</th>
+						<td id="theft-desc"></td>
+					</tr>
+					<tr>
+						<th scope="row" >Lock</th>
+						<td id="lock"></td>
+					</tr>
+					<tr>
+						<th scope="row" >Lock Defeat Description</th>
+						<td id="lock-defeat"></td>
+					</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+
+
+
+
+    </div>
+
+	<!-- Load JS libraries -->
+	<script src="js/jquery.min.js"></script>
+	<script src="js/tether.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/queue.min.js"></script>
+	<script src="js/d3.min.js"></script>
+	<script src="js/leaflet.js"></script>
+	<script src="js/d3.tip.js"></script>
+
+
+
+
+	<!-- Choropleth and second visualization -->
+    <script src="js/vis-leaflet.js"></script>
+	
+</body>
+</html>

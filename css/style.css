@@ -1,0 +1,185 @@
+.bar {
+    fill: #80406e;
+}
+
+.bar:hover {
+    fill: #EC7873;
+}
+
+.axis {
+    font: 10px sans-serif;
+    color: white;
+}
+
+.y.axis{
+    fill: white;
+}
+.x.axis{
+    fill: white;
+}
+
+.axis path,
+.axis line {
+    fill: none;
+    stroke: #ebebeb;
+    shape-rendering: crispEdges;
+}
+
+.lockText{
+    font-size: 13px;
+}
+
+.x.axis path {
+    display: none;
+}
+
+/* Make text smaller to fit content */
+body {
+    font: 11px sans-serif;
+}
+
+/* Legend Position Style */
+.legend {
+    position:absolute;
+    left:955px;
+    top:2500px;
+}
+
+/* On mouse hover, lighten state color */
+path:hover {
+    fill-opacity: .7;
+}
+
+
+.bikeLockImg{
+    opacity: 0.4;
+    width: 150px;
+    height: 150px;
+}
+
+.lockSummary{
+   width: 400px;
+    text-align: left;
+}
+
+/* For time chart */
+rect.bordered {
+    stroke: #E6E6E6;
+    stroke-width:2px;
+}
+
+text.mono {
+    font-size: 9pt;
+    font-family: Consolas, courier;
+    fill: #aaa;
+}
+
+text.axis-workweek {
+    fill: #000;
+}
+
+text.axis-worktime {
+    fill: #000;
+}
+
+/*********************/
+/*  TOOLTIP OVERLAY  */
+/*********************/
+
+.tooltip-title {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.d3-tip {
+    line-height: 1;
+    padding: 12px;
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    border-radius: 2px;
+}
+
+/* Creates a small triangle extender for the tooltip */
+.d3-tip:after {
+    box-sizing: border-box;
+    display: inline;
+    font-size: 10px;
+    width: 100%;
+    line-height: 1;
+    color: rgba(0, 0, 0, 0.8);
+    content: "\25BC";
+    position: absolute;
+    text-align: center;
+}
+
+/* Style northward tooltips differently */
+.d3-tip.n:after {
+    margin: -1px 0 0 0;
+    top: 100%;
+    left: 0;
+}
+
+/*****************/
+/* AREA CHART/BRUSHING */
+/*****************/
+
+.area {
+    fill: #80406e;
+    clip-path: url(#clip);
+}
+
+.brush .extent {
+    stroke: #fff;
+    fill-opacity: .125;
+    shape-rendering: crispEdges;
+}
+
+
+.introBackground{
+    background-image: url('https://s3.amazonaws.com/biketheftsleuths/summer-sport-bikes-bicycles.jpg');
+    height: 150%;
+    width: 100%;
+    opacity: 0.8;
+}
+
+.bikeLockBackground{
+    background-image: url('https://s3.amazonaws.com/biketheftsleuths/Cable-lock-cut.jpg');
+    height: 200%;
+    width: 100%;
+}
+
+.whenBackground{
+    background-image: url('https://s3.amazonaws.com/biketheftsleuths/bikewheel_clock.jpg');
+    height: 200%;
+    width: 100%;
+    opacity: 0.8;
+}
+
+.brandsBackground{
+    background-image: url('https://s3.amazonaws.com/biketheftsleuths/brands.jpg');
+    height: 100%;
+    width: 100%;
+    opacity: 0.8;
+}
+
+.creditsBackground{
+    background-image: url('https://s3.amazonaws.com/biketheftsleuths/credits_bike.jpg');
+    height: 100%;
+    width: 100%;
+    opacity: 0.8;
+}
+
+.greyBackground{
+    background-image: url('https://s3.amazonaws.com/biketheftsleuths/grey_gradient.png');
+    height: 275%;
+    width: 100%;
+    opacity: 0.8;
+}
+
+.greyBackgroundTrends{
+    background-image: url('https://s3.amazonaws.com/biketheftsleuths/grey_gradient.png');
+    height: 150%;
+    width: 100%;
+    opacity: 0.8;
+}
