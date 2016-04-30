@@ -1,8 +1,8 @@
 # Biketheft Sleuths
 
-Hosted online at https://nickwhalen06.github.io/biketheft/
+Hosted online at  http://bikesleuths.github.io/
 
-Repository online at https://github.com/nickwhalen06/biketheft/tree/gh-pages
+Repository online at https://github.com/BikeSleuths/BikeSleuths.github.io
 
 ###Organization
 1. All data used for visualizations is in the data folder.
